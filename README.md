@@ -78,6 +78,24 @@ github/
 
 Unpacking logic for both formats is inlined in each `run.py`. Non-quantized parameters (embeddings, norms, scales, biases, final classifiers) are stored as standard fp32 tensors.
 
+## Test Results (written by ai)
+
+MNIST CNN
+Model	Accuracy	Parameters
+Ternary {-1,0,+1}	46.97%	94,410
+Binary {-1,+1}	19.68%	94,410
+Same as before — reproducible. Binary drops 27 points because ternary zeros (6.5% of weights) get snapped to +1.
+LLM (63.6M params, step 10000)
+This run was faster than the previous one — 16.5 tok/s vs 5.1 tok/s. Likely CPU cache/warmup difference.
+Prompt	Throughput
+Once upon a time, a little girl named Lily	16.5 tok/s
+The future of artificial intelligence is	19.9 tok/s
+In the beginning,	20.6 tok/s
+The meaning of life is	29.7 tok/s
+Sample generation (Lily prompt, this run)
+Once upon a time, a little girl named Lily loved to play outside. She loved to the sky and had a special. She asked, "What's friend?" Her mommy said, "I can you are many friends. I'm ready to play together?" Her mom said, "I don't you, you, we are you." Lily had to see a vroom, but she would find some friends. Once upon a time, there was a little boy named Lily. Timmy was a few days and mommy. Timmy replied, "I'm not find the best day, Lily. Now, Timmy. He was
+TinyStories style — recurring characters (Lily, Timmy), simple narrative structure. Text differs each run due to sampling but quality is consistent.
+
 ## Acknowledgements & License
 
 This project is a quantized version of the original `mnist-cnn` by Han Hao.
