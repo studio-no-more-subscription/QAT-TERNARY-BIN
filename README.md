@@ -5,7 +5,7 @@ Pretrained models with quantized weights, packaged for inference and benchmarkin
 - **Ternary** `{-1, 0, +1}` — 1.58-bit (BitNet-style), 2-bit packed (4 values/byte)
 - **Binary** `{-1, +1}` — 1-bit, packed (8 values/byte), ~2× smaller quantized weights
 
-Since the ternary weights have very low sparsity (<0.5% zeros for LLM and image generator), the binary variant gives nearly identical results at half the quantized-weight storage.
+Since the ternary weights have very low sparsity (<0.5% zeros for LLM), the binary variant gives nearly identical results at half the quantized-weight storage.
 
 Each subfolder is **self-contained**: one `run.py` file + weights + benchmark artifacts. No external project code required.
 
@@ -13,7 +13,7 @@ Each subfolder is **self-contained**: one `run.py` file + weights + benchmark ar
 
 | Model | Folder | Weights (ternary / binary) | Task |
 |-------|--------|----------------------------|------|
-| LLM 100M | [`llm/`](llm/) | 54 MB / 51 MB (zipped) | Text generation (TinyStories-style) |
+| LLM 100M(is changed to 30M due to github storage issue, 25mb) | [`llm/`](llm/) | 54 MB / 51 MB (zipped) | Text generation (TinyStories-style) |
 | MNIST CNN | [`mnist_cnn/`](mnist_cnn/) | 49 KB / 32 KB | Digit classification |
 | Image Generator | [`image_generator/`](image_generator/) | 1.3 MB / 1.0 MB | Autoregressive pixel image generation |
 
