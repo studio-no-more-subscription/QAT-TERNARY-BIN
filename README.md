@@ -15,7 +15,7 @@ Each subfolder is **self-contained**: one `run.py` file + weights + benchmark ar
 |-------|--------|----------------------------|------|
 | LLM 100M(is changed to 30M due to github storage issue, 25mb) | [`llm/`](llm/) | 54 MB / 51 MB (zipped) | Text generation (TinyStories-style) |
 | MNIST CNN | [`mnist_cnn/`](mnist_cnn/) | 49 KB / 32 KB | Digit classification |
-| Image Generator | [`image_generator/`](image_generator/) | 1.3 MB / 1.0 MB | Autoregressive pixel image generation |
+| Image Generator(currently not working and not tested) | [`image_generator/`](image_generator/) | 1.3 MB / 1.0 MB | Autoregressive pixel image generation |
 
 ## Quick Start
 
