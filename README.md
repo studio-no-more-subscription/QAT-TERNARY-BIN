@@ -1,5 +1,7 @@
 # Ternary & Binary Weight Inference Models
 
+# Changes, Mistakes: This doesn't use bitnet or other similar methods. Things that says this uses bitnet is mistake sorry:(.
+
 Pretrained models with quantized weights, packaged for inference and benchmarking. Each model ships in **two** weight formats:
 
 - **Ternary** `{-1, 0, +1}` — 1.58-bit (BitNet-style), 2-bit packed (4 values/byte)
